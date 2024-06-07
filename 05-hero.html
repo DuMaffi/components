@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hero</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        color: white;
+        font-family: 'Inter', sans-serif;
+        display: flex;
+      }
+      .hero {
+        padding-left: 80px;
+        padding-top: 130px;
+        background: linear-gradient(
+            to bottom right,
+            rgba(48, 48, 48, 0.7),
+            rgba(0, 0, 0, 0.7)
+          ),
+          url('hero.jpg');
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100vw;
+        height: 600px;
+        display: flex;
+      }
+      .content {
+        display: flex;
+        flex-direction: column;
+      }
+      .content {
+        padding: 40px;
+        margin-left: 50px;
+        gap: 36px;
+      }
+      nav {
+        color: #f76707;
+        display: flex;
+        position: fixed;
+        padding: 55px;
+        width: 100%;
+        transition: all ease-in-out 0.8s;
+      }
+
+      .logo {
+        position: fixed;
+        left: 180px;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 24px;
+        transition: all ease-in-out 0.8s;
+      }
+      .navigation {
+        position: fixed;
+        transition: all ease-in-out 0.8s;
+        right: 170px;
+      }
+
+      .content-header {
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 1.1;
+      }
+      .content-description {
+        font-size: 18px;
+        line-height: 1.6;
+      }
+
+      button {
+        width: 220px;
+        padding: 15px;
+        font-weight: 600;
+        color: rgba(222, 226, 230);
+        background-color: #f76707;
+        font-size: 22px;
+        border: 0;
+        border-radius: 12px;
+      }
+      .navigation {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">Logo</div>
+
+      <div class="navigation">Navitagion</div>
+    </nav>
+    <div class="hero">
+      <div class="content">
+        <div class="content-header">
+          A healthy meal <br />
+          delivered to your door, <br />
+          every single day
+        </div>
+        <div class="content-description">
+          The smart 365-days-per-year food subscription that will make <br />
+          you eat healthy again. Tailored to your personal tastes and <br />
+          nutritional needs.
+        </div>
+        <button>Start eating well</button>
+      </div>
+    </div>
+    <script>
+      /* const header = document.querySelector('nav');
+      const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 1.0,
+      };
+      const navigation = document.querySelector('.navigation');
+      const btn = document.querySelector('button');
+      const logo = document.querySelector('.logo');
+      const addHeaderBackground = function (entries) {
+        console.log(entries);
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          logo.style.transform = 'translateY(-45%)';
+          navigation.style.transform = 'translateY(-45%)';
+          console.log(btn.isIntersecting);
+          header.style.backgroundColor = 'rgba(222, 226, 230, 0.85)';
+        } else {
+          logo.style.transform = 'translateY(45%)';
+          navigation.style.transform = 'translateY(45%)';
+
+          header.style.backgroundColor = '';
+        }
+      };
+      const obs = new IntersectionObserver(addHeaderBackground, options);
+      obs.observe(btn); */
+    </script>
+  </body>
+</html>

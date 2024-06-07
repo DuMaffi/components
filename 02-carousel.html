@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carousel</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /*
+      #1864ab
+      #343a40
+      */
+      body {
+        color: #343a40;
+        font-family: 'Inter', sans-serif;
+      }
+      .carousels {
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        width: 800px;
+        height: 800px;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .carousel-item {
+        z-index: 1;
+        top: 25%;
+        left: 5%;
+        position: absolute;
+        margin: auto;
+        width: 90%;
+        height: 220px;
+        background-color: #1b7fdb;
+        border-radius: 12px;
+        padding: 20px 30px;
+        display: flex;
+        transition: ease-in-out 1s;
+      }
+      .carousel-2 {
+        background-color: #2f9e44;
+      }
+      .carousel-3 {
+        background-color: #f03e3e;
+      }
+      .carousel-4 {
+        background-color: #7048e8;
+      }
+      .carousel-1,
+      .carousel-2,
+      .carousel-3,
+      .carousel-4 {
+        cursor: grab;
+        cursor: -moz-grab;
+        cursor: -webkit-grab;
+      }
+      .carousel-1:active,
+      .carousel-2:active,
+      .carousel-3:active,
+      .carousel-4:active {
+        cursor: grabbing;
+        cursor: -moz-grabbing;
+        cursor: -webkit-grabbing;
+      }
+      .image {
+        pointer-events: none;
+        grid-row: 1 / 2;
+        margin-right: 15px;
+        margin-left: 15px;
+        margin-top: -40px;
+      }
+      .carousel-1 .name,
+      .carousel-1 .text,
+      .carousel-1 .footer {
+        color: #e7f5ff;
+      }
+
+      .carousel-2 .name,
+      .carousel-2 .text,
+      .carousel-2 .footer {
+        color: #ebfbee;
+      }
+
+      .carousel-3 .name,
+      .carousel-3 .text,
+      .carousel-3 .footer {
+        color: #fff5f5;
+      }
+
+      .carousel-4 .name,
+      .carousel-4 .text,
+      .carousel-4 .footer {
+        color: #f3f0ff;
+      }
+
+      .text {
+        line-height: 1.4;
+        grid-row: 1;
+        grid-column: 2/ -1;
+        width: 100%;
+        min-width: 0;
+        font-size: 18px;
+      }
+
+      .footer {
+        grid-row: 2;
+        grid-column: 2 / -1;
+        font-size: 12px;
+      }
+      p {
+        line-height: 0;
+      }
+      .content {
+        display: grid;
+        grid-template-columns: auto minMax(0, 1fr) minmax(0, 1fr);
+        gap: 15px;
+      }
+
+      img {
+        width: 190px;
+        height: 260px;
+        box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+      }
+      .btn {
+        cursor: pointer;
+        z-index: 2;
+        display: flex;
+        border-radius: 300px;
+        padding: 5px;
+        align-self: center;
+        background-color: #ffffffd3;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        position: absolute;
+      }
+      .name {
+        font-weight: 600;
+      }
+
+      .btn-left {
+        top: 37%;
+        left: 3%;
+      }
+      .btn-right {
+        top: 37%;
+        right: 3%;
+      }
+
+      .chevron {
+        margin: auto;
+
+        height: 20px;
+        width: 20px;
+      }
+      .ball {
+        cursor: pointer;
+        border: solid 2px #1b7fdb;
+        border-radius: 155px;
+        padding: 3px;
+        width: 3px;
+        height: 3px;
+      }
+      .balls {
+        position: absolute;
+        z-index: 0;
+        top: 53.5%;
+        left: 32%;
+        gap: 7px;
+        width: 120px;
+        justify-content: center;
+        display: flex;
+      }
+      .ball:nth-child(1) {
+        background-color: #1b7fdb;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="carousel">
+        <div class="carousels">
+          <div class="carousel-1 carousel-item">
+            <div class="image"><img src="person1.jpg" alt="" /></div>
+            <div class="content">
+              <p class="text">
+                "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Exercitationem eos id omnis modi, eveniet nemo libero iure nihil
+                quia impedit, reprehenderit tenetur quaerat ipsum soluta
+                molestiae dolores fugiat tempora sint?""
+              </p>
+              <div class="footer">
+                <p class="name">Vicky Hladynets</p>
+                <br />
+                <p class="position">
+                  Computer Hardware Engineer at Frontier Communications
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-2 carousel-item">
+            <div class="image"><img src="person2.jpg" alt="" /></div>
+            <div class="content">
+              <p class="text">
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                temporibus, praesentium repellendus similique facere aliquid
+                nostrum voluptatum. Facere sed maxime aut amet delectus,
+                assumenda, officiis, doloribus iure"
+              </p>
+              <div class="footer">
+                <p class="name">Jacke Nackos</p>
+                <br />
+                <p class="position">Senior Product Manager at DISH Network</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-3 carousel-item">
+            <div class="image"><img src="person3.jpg" alt="" /></div>
+            <div class="content">
+              <p class="text">
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Suscipit quibusdam sed obcaecati corrupti, ea amet quia, sequi
+                et delectus quaerat unde, omnis cumque enim facilis quod impedit
+                esse possimus exercitationem!""
+              </p>
+              <div class="footer">
+                <p class="name">Philip Martin</p>
+                <br />
+                <p class="position">
+                  Marketing Manager at Marriott International
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-4 carousel-item">
+            <div class="image"><img src="person4.jpg" alt="" /></div>
+            <div class="content">
+              <p class="text">
+                "Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Alias, est officiis. Natus necessitatibus debitis repellat,
+                dolore illum magni assumenda vero, culpa, voluptas omnis
+                facilis! Magni quo cupiditate odio alias delectus?"
+              </p>
+              <div class="footer">
+                <p class="name">Joseph Gonzalez</p>
+                <br />
+                <p class="position">Computer Systems Analyst at W.R. Berkley</p>
+              </div>
+            </div>
+          </div>
+          <div class="btn btn-right">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="chevron"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m8.25 4.5 7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </div>
+          <div class="btn btn-left">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="chevron"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 19.5 8.25 12l7.5-7.5"
+              />
+            </svg>
+          </div>
+          <div class="balls">
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const colors = ['#1b7fdb', '#2f9e44', '#f03e3e', '#7048e8'];
+
+      let curCarousel = 0;
+      const carousel = document.querySelector('.carousel');
+
+      const balls = document.querySelectorAll('.ball');
+      const carousels = document.querySelectorAll('.carousel-item');
+      const btnLeft = document.querySelector('.btn-left');
+      const btnRight = document.querySelector('.btn-right');
+      const lastCarousel = carousels.length;
+      const goToCarousel = function (carousel) {
+        balls.forEach(function (ball, i) {
+          ball.style.border = `solid 2px ${colors[curCarousel]}`;
+          ball.style.backgroundColor = '#fff';
+          if (i === curCarousel)
+            ball.style.backgroundColor = colors[curCarousel];
+        });
+        carousels.forEach(function (s, i) {
+          s.style.transform = `translateX(${150 * (i - carousel)}%)`;
+        });
+      };
+
+      goToCarousel(0);
+
+      btnRight.addEventListener('click', function () {
+        if (curCarousel === lastCarousel - 1) {
+          curCarousel = 0;
+        } else {
+          curCarousel++;
+        }
+        goToCarousel(curCarousel);
+      });
+
+      btnLeft.addEventListener('click', function () {
+        if (curCarousel === 0) {
+          curCarousel = lastCarousel - 1;
+        } else {
+          curCarousel--;
+        }
+        goToCarousel(curCarousel);
+      });
+
+      balls.forEach(function (ball, i) {
+        ball.addEventListener('click', function () {
+          curCarousel = i;
+          goToCarousel(curCarousel);
+        });
+      });
+
+      let start;
+      let finish;
+      let mouseDown = false;
+      carousels.forEach((e) => {
+        e.addEventListener('mousedown', (e) => {
+          start = e.pageX;
+          mouseDown = true;
+        });
+      });
+      carousels.forEach((e) => {
+        e.addEventListener('mousemove', (e) => {
+          console.log(e.pageX - start);
+          if (mouseDown) {
+            e.target.closest('.carousel-item').style.transform = `translateX(${
+              e.pageX - start
+            })`;
+          }
+        });
+      });
+      carousels.forEach((e) => {
+        e.addEventListener('mouseup', (e) => {
+          finish = e.pageX;
+          console.log(start, finish);
+          if (start - finish > 15 || finish - start > 15)
+            start > finish ? btnRight.click() : btnLeft.click();
+        });
+      });
+    </script>
+  </body>
+</html>

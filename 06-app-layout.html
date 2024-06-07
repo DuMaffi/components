@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App Layout</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ===== Scrollbar CSS ===== */
+      /* Firefox */
+      * {
+        scrollbar-width: thin;
+        scrollbar-color: #5f3dc4 #757575;
+      }
+
+      /* Chrome, Edge, and Safari */
+      *::-webkit-scrollbar {
+        width: 12px;
+      }
+
+      *::-webkit-scrollbar-track {
+        background: #757575;
+      }
+
+      *::-webkit-scrollbar-thumb {
+        background-color: #5f3dc4;
+        border-radius: -1px;
+        border: 1px none #ff1a1a;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        color: black;
+        font-family: 'Inter', sans-serif;
+      }
+      header {
+        margin-left: 75px;
+        z-index: 0;
+        display: flex;
+        gap: 20px;
+        padding-left: 40px;
+        background-color: #6741d9;
+        width: 96%;
+        align-items: center;
+        height: 75px;
+      }
+      .trash {
+        position: absolute;
+        right: 35px;
+        color: white;
+        padding: 8px;
+        font-weight: 500;
+        background-color: #c2255c;
+        cursor: pointer;
+      }
+      .trash:hover {
+        background-color: #a61e4d;
+      }
+      .header-btn {
+        cursor: pointer;
+        padding: 12px;
+        background-color: rgb(95, 61, 196);
+        color: white;
+        font-weight: 600;
+      }
+      .header-btn:hover {
+        background-color: #9775fa;
+      }
+      nav {
+        overflow: hidden;
+        position: absolute;
+        z-index: 1;
+        height: 953px;
+        color: #fff;
+        width: 75px;
+        background-color: #343a40;
+        text-align: center;
+        padding-top: 25px;
+        font-weight: 700;
+        font-size: 22px;
+        transition: ease-in-out 0.7s;
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+        align-items: center;
+      }
+      .container {
+        display: flex;
+        height: 878px;
+        margin-left: 75px;
+      }
+      .emails {
+        scrollbar-gutter: stable;
+        width: 20%;
+        background-color: #dee2e6;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        align-items: center;
+      }
+      .emails:hover {
+        scrollbar-color: #6969dd #e0e0e0;
+
+        overflow-y: scroll;
+      }
+      .email {
+        cursor: pointer;
+        margin-top: 40px;
+        padding: 35px;
+        color: #343a40;
+        background-color: #adb5bd;
+        text-align: center;
+        width: 80%;
+        font-weight: 700;
+        font-size: 24px;
+      }
+      .email:hover {
+        background-color: #495057;
+        color: #adb5bd;
+      }
+      .email-view-text {
+        font-size: 24px;
+        font-weight: 700;
+      }
+      .email-view {
+        padding-top: 15px;
+        text-align: center;
+        width: 60%;
+        background-color: #f1f3f5;
+      }
+      .additional {
+        font-weight: 700;
+        font-size: 24px;
+        text-align: center;
+        padding-top: 15px;
+        width: 20%;
+        background-color: #dee2e6;
+      }
+      .icon {
+        position: relative;
+        width: 45px;
+        height: 45px;
+        transition: ease-in-out 0.7s;
+      }
+      .nav-text {
+        transition: ease-in-out 0.7s;
+        position: absolute;
+        transform: translateX(130%);
+      }
+      .nav-element {
+        transition: ease-in-out 0.7s;
+
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        gap: 20px;
+      }
+      .nav-header {
+        align-self: center;
+      }
+
+      .nav-element {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <p class="nav-header">Nav</p>
+      <div class="user nav-element">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
+          />
+        </svg>
+        <p class="nav-text">User &nbsp; &nbsp;</p>
+      </div>
+      <div class="config nav-element">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z"
+          />
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+          />
+        </svg>
+
+        <p class="nav-text">Config</p>
+      </div>
+    </nav>
+    <header>
+      <div class="header-btn">New</div>
+      <div class="header-btn">Reply</div>
+      <div class="header-btn">Forward</div>
+      <div class="header-btn">Mark unread</div>
+      <div class="trash">Trash</div>
+    </header>
+    <div class="container">
+      <div class="emails">
+        <div class="email">Email 1</div>
+        <div class="email">Email 2</div>
+        <div class="email">Email 3</div>
+        <div class="email">Email 4</div>
+        <div class="email">Email 5</div>
+        <div class="email">Email 6</div>
+        <div class="email">Email 7</div>
+        <div class="email">Email 8</div>
+        <div class="email">Email 9</div>
+      </div>
+      <div class="email-view"><p class="email-view-text">Email View</p></div>
+      <div class="additional">Additional Info</div>
+    </div>
+    <script>
+      const navTexts = document.querySelectorAll('.nav-text');
+      const icons = document.querySelectorAll('.icon');
+      const navbar = document.querySelector('nav');
+      navbar.addEventListener('mouseenter', function () {
+        navbar.style.width = '150px';
+        icons.forEach((icon) => {
+          icon.style.transform = 'translateX(-100%)';
+        });
+        navTexts.forEach((navText) => {
+          navText.style.transform = 'translateX(15%)';
+        });
+      });
+      navbar.addEventListener('mouseleave', function () {
+        navbar.style.width = '75px';
+        icons.forEach((icon) => {
+          icon.style.transform = 'translateX(0%)';
+        });
+        navTexts.forEach((navText) => {
+          navText.style.transform = 'translateX(130%)';
+        });
+      });
+    </script>
+  </body>
+</html>
